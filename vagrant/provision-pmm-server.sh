@@ -1,5 +1,6 @@
 #!/bin/bash 
 
+sudo yum install -y telnet vim wget screen net-tools epel-release git
 sudo yum install -y yum-utils
 
 sudo yum-config-manager \
