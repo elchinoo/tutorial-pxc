@@ -24,9 +24,44 @@ vagrant up
 
 It will create 5 virtual machines:
 
-- PMM server
-- PXC nodes 1, 2 and 3
-- Client box
+- PMM server, named `pmm`;
+- PXC nodes 1, 2 and 3, named `node1`, `node2`, `node3`;
+- Client box, named `client`;
+
+Vagrant uses SSH certificate and port redirects to SSH to the boxes. We can use the command `vagrant ssh <box_name>` from inside the vagrant folder to SSH into each box, for example:
+
+```bash
+$ vagrant ssh pmm
+[vagrant@pmm-server ~]$ 
+```
+
+We can check the overal status with `vagrant status`:
+
+```bash
+$ vagrant status
+Current machine states:
+
+pmm                       running (virtualbox)
+node1                     running (virtualbox)
+node2                     running (virtualbox)
+node3                     running (virtualbox)
+client                    running (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+```
+
+Note that all commands shall be ran inside of the `vagrant` folder to work. If we attempt to run it outside the folder that has the machine definitions we get an error that would look like this:
+
+```bash
+$ vagrant status
+A Vagrant environment or target machine is required to run this
+command. Run `vagrant init` to create a new Vagrant environment. Or,
+get an ID of a target machine from `vagrant global-status` to run
+this command on. A final option is to change to a directory with a
+Vagrantfile and to try again.
+```
 
 ## License
 
