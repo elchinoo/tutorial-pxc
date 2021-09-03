@@ -11,6 +11,7 @@ sudo yum install -y yum-utils
 # Install Percona repo and PXC
 sudo yum -y install https://repo.percona.com/yum/percona-release-latest.noarch.rpm
 sudo percona-release enable pxc-57
+sudo percona-release enable pxc80
 sudo percona-release enable tools 
 sudo yum -y install Percona-XtraDB-Cluster-57 pmm2-client percona-toolkit sysbench 
 echo "Downloading PXC 8..."
